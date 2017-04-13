@@ -41,12 +41,12 @@ class kbe_links_widgets extends WP_Widget {
             <?php
             if (current_user_can( "publish_posts" ) ) {
             ?>
-            <a class="kbe_add_button" title="Neuer Beitrag" href="/wp-admin/post-new.php?post_type=kbe_knowledgebase"><i class="mdf mdf-lg mdf-plus"></i></a>
+            <a class="kbe_add_button" title="Neuer Beitrag" href="<?php get_site_url() ?>/wp-admin/post-new.php?post_type=kbe_knowledgebase"><i class="mdf mdf-lg mdf-plus"></i></a>
             <?php
 	    }
             if (is_singular() and !is_page() and current_user_can( "edit_posts", $post_id ) ) {
             ?>
-            <a class="kbe_edit_button" title="Beitrag Editieren" href="/wp-admin/post.php?action=edit&post=<?php echo $post_id ?>"><i class="mdf mdf-lg mdf-pencil"></i></a>
+            <a class="kbe_edit_button" title="Beitrag Editieren" href="<?php get_site_url() ?>/wp-admin/post.php?action=edit&post=<?php echo $post_id ?>"><i class="mdf mdf-lg mdf-pencil"></i></a>
             <?php
             }
 
