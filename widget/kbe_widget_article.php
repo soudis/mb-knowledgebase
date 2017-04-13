@@ -37,6 +37,7 @@ class kbe_Article_Widget extends WP_Widget {
         $url_path = explode('/',$parsed_url['path']);
         $url_path_length=count($url_path);
 
+
         if ($url_path[2] != 'kbe_knowledgebase'){
         //=======> widget body
         echo $before_widget;
@@ -47,8 +48,9 @@ class kbe_Article_Widget extends WP_Widget {
                 }
 
                 $tax_query = null;
-                if ($url_path[2] == 'knowledgebase_category') {
-                    $term_id = get_term_by   ('slug', $url_path[3], KBE_POST_TAXONOMY)->term_id;
+                if (is_category()) {
+                    $queried_object = get_queried_object();
+                    $term_id = $queried_object->term_id;
                     $tax_query = array(
                                 array(
                                         'taxonomy' => KBE_POST_TAXONOMY,
