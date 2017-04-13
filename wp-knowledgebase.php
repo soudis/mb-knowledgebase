@@ -507,14 +507,23 @@ function kbe_collapsible(){
            jQuery(this).html('<i class="mdf mdf-caret-square-o-right"></i>');     
         }
         
-    })
+    });
 
-    jQuery('.kbe_category_collapse_all').html('<i class="mdf mdf-compress"></i>');
+    jQuery('.kbe_category_collapse_all').html('<i class="mdf mdf-minus-square-o"></i>');
 
     jQuery('.kbe_category_collapse_all').click(function(){
-        jQuery(this).parent().parent().find('.kbe_category_panel').toggle();
+        jQuery(this).find('.kbe_category_panel').hide();
+        jQuery(this).find('.kbe_category_collapse').html('<i class="mdf mdf-caret-square-o-right"></i>');    
         
-    })
+    });
+
+    jQuery('.kbe_category_expand_all').html('<i class="mdf mdf-plus-square-o"></i>');
+
+    jQuery('.kbe_category_expand_all').click(function(){
+        jQuery(this).find('.kbe_category_panel').show();
+        jQuery(this).find('.kbe_category_collapse').html('<i class="mdf mdf-caret-square-o-down"></i>');    
+        
+    });
 
 </script>
 

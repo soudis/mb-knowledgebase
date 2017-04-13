@@ -76,7 +76,8 @@
             <!--<articles>-->
             <div class="kbe_articles">
                 <h2><strong><?php echo $kbe_cat_name; ?></strong></h2>
-
+                <span class="kbe_category_collapse_all" style="float:right;"></span> 
+                <span class="kbe_category_expand_all" style="float:right;"></span> 
                 <ul>
             <?php
                 if($kbe_tax_post_qry->have_posts()) :
@@ -111,8 +112,7 @@
                             $kbe_child_term_name = $kbe_child_term->name; 
             ?>
                <h<?php echo $level+3; ?>> <!-- <?php echo $kbe_child_term_slug ?> -->  
-                                <span class="kbe_category_collapse" style="float:left;"></span>   
-                                <span class="kbe_category_collapse_all" style="float:left;"></span>                                 
+                                <span class="kbe_category_collapse"></span>                                   
                                 <a href="<?php echo get_term_link($kbe_child_term_slug, 'kbe_taxonomy') ?>">
                                     <?php echo $kbe_child_term_name; ?>
                                 </a>  
