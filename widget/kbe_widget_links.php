@@ -53,7 +53,7 @@ class kbe_links_widgets extends WP_Widget {
         if (!is_singular() and !is_page()) {
             $cat_link = get_category_link( $post_id );
             ?>
-            <a class="kbe_feed_button" title="Link zum RSS Feed" href="<?php echo $cat_link ?>feed/?post_type=kbe_knowledgebase"><i class="mdf mdf-lg mdf-rss"></i></a>
+            <a class="kbe_feed_button" title="Link zum RSS Feed" href="<?php echo get_feed_link() ?>"><i class="mdf mdf-lg mdf-rss"></i></a>
             <?php
         }        
             ?>
