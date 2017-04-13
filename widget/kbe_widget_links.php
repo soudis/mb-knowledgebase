@@ -29,12 +29,13 @@ class kbe_links_widgets extends WP_Widget {
         ?>
         <div class="kbe_widget">
         <?php
-        if (is_user_logged_in()) {
+
             $queried_object = get_queried_object();
 
             if ( $queried_object ) {
                 $post_id = $queried_object->ID;
             }
+        if (is_user_logged_in()) {
         ?>
         
             <?php
