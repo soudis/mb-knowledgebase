@@ -54,9 +54,11 @@
 <!-- <h2><strong><?php the_category( ', ' ); ?></strong></h2> -->
             <?php 
                 the_content();
+            ?>
+                <p>erstellt von <?php the_author(); ?></p>
+            <?php                 
                 if(KBE_COMMENT_SETTING == 1){
             ?>
-<p>erstellt von <?php the_author(); ?></p> 
                     <div class="kbe_reply">
             <?php
                         comments_template("wp_knowledgebase/kbe_comments.php");
