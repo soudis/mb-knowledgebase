@@ -1,7 +1,7 @@
-=== WP Knowledgebase ===
-Contributors: EnigmaWeb, helgatheviking, Base29, macbookandrew
+=== MB Knowledgebase (forked from KB Knowledgebase) ===
+Contributors: EnigmaWeb, helgatheviking, Base29, macbookandrew, soudis
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CEJ9HFWJ94BG4
-Tags: WP Knowledgebase, knowledgebase, knowledge base, faqs, wiki
+Tags: MB Knowledgebase, knowledgebase, knowledge base, faqs, wiki
 Requires at least: 2.7
 Tested up to: 4.5
 Stable tag: trunk
