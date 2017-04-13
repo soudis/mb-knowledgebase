@@ -509,6 +509,13 @@ function kbe_collapsible(){
         
     })
 
+    jQuery('.kbe_category_collapse_all').html('<i class="mdf mdf-compress"></i>');
+
+    jQuery('.kbe_category_collapse_all').click(function(){
+        jQuery(this).parent().find('.kbe_category_panel').toggle();
+        
+    })
+
 </script>
 
 <?php
