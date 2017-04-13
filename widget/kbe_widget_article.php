@@ -32,10 +32,6 @@ class kbe_Article_Widget extends WP_Widget {
         $kbe_widget_article_count = $widgetData['txtKbeArticleCount'];
         $kbe_widget_article_order = $widgetData['txtKbeArticleOrder'];
         $kbe_widget_article_orderby = $widgetData['txtKbeArticleOrderBy'];
-        
-        $parsed_url = parse_url($_SERVER['REQUEST_URI']);
-        $url_path = explode('/',$parsed_url['path']);
-        $url_path_length=count($url_path);
 
 
         if (!is_single()){
