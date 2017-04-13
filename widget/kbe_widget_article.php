@@ -38,7 +38,7 @@ class kbe_Article_Widget extends WP_Widget {
         $url_path_length=count($url_path);
 
 
-        if ($url_path[2] != 'kbe_knowledgebase'){
+        if (!is_single()){
         //=======> widget body
         echo $before_widget;
         echo '<div class="kbe_widget kbe_widget_article">';
@@ -48,7 +48,7 @@ class kbe_Article_Widget extends WP_Widget {
                 }
 
                 $tax_query = null;
-                if (is_category()) {
+                if (is_tax()) {
                     $queried_object = get_queried_object();
                     $term_id = $queried_object->term_id;
                     $tax_query = array(
