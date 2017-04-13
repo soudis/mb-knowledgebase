@@ -500,8 +500,8 @@ function kbe_collapsible(){
     jQuery('.kbe_category_collapse').html('<i class="mdf mdf-caret-square-o-right"></i>');
 
     jQuery('.kbe_category_collapse').click(function(){
-        jQuery(this).parent().parent().next('.kbe_category_panel').toggle();
-        if (jQuery(this).parent().parent().next('.kbe_category_panel').is(':visible')) {
+        jQuery(this).parent().next('.kbe_category_panel').toggle();
+        if (jQuery(this).parent().next('.kbe_category_panel').is(':visible')) {
            jQuery(this).html('<i class="mdf mdf-caret-square-o-down"></i>');    
         } else {
            jQuery(this).html('<i class="mdf mdf-caret-square-o-right"></i>');     
@@ -512,16 +512,16 @@ function kbe_collapsible(){
     jQuery('.kbe_category_collapse_all').html('<i class="mdf mdf-minus-square-o"></i>');
 
     jQuery('.kbe_category_collapse_all').click(function(){
-        jQuery(this).find('.kbe_category_panel').hide();
-        jQuery(this).find('.kbe_category_collapse').html('<i class="mdf mdf-caret-square-o-right"></i>');    
+        jQuery(this).parent().find('.kbe_category_panel').hide();
+        jQuery(this).parent().find('.kbe_category_collapse').html('<i class="mdf mdf-caret-square-o-right"></i>');    
         
     });
 
     jQuery('.kbe_category_expand_all').html('<i class="mdf mdf-plus-square-o"></i>');
 
     jQuery('.kbe_category_expand_all').click(function(){
-        jQuery(this).find('.kbe_category_panel').show();
-        jQuery(this).find('.kbe_category_collapse').html('<i class="mdf mdf-caret-square-o-down"></i>');    
+        jQuery(this).parent().find('.kbe_category_panel').show();
+        jQuery(this).parent().find('.kbe_category_collapse').html('<i class="mdf mdf-caret-square-o-down"></i>');    
         
     });
 
