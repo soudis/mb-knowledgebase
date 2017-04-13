@@ -75,8 +75,8 @@
 
             <!--<articles>-->
             <div class="kbe_articles">
-                <h2>                <span class="kbe_category_collapse_all" style="float:right;"></span> 
-                <span class="kbe_category_expand_all" style="float:right;"></span> <strong><?php echo $kbe_cat_name; ?></strong></h2>
+                <h2>                <span class="kbe_category_collapse_all" style="float:left;"></span> 
+                <span class="kbe_category_expand_all" style="float:left;"></span> <strong><?php echo $kbe_cat_name; ?></strong></h2>
 
                 <ul>
             <?php
