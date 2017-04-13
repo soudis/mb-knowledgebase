@@ -46,16 +46,17 @@ class kbe_links_widgets extends WP_Widget {
             <a class="kbe_edit_button" title="Beitrag Editieren" href="/wp-admin/post.php?action=edit&post=<?php echo $post_id ?>"><i class="mdf mdf-lg mdf-pencil"></i></a>
             <?php
             }
-            if (!is_singular() and !is_page()) {
-            $cat_link = get_category_link( $post_id );
-            ?>
-            <a class="kbe_feed_button" title="Link zum RSS Feed" href="<?php echo $cat_link ?>feed/?post_type=kbe_knowledgebase"><i class="mdf mdf-lg mdf-rss"></i></a>
-            <?php
-	    }
+
             ?>
         </div>
         <?php
         }
+        if (!is_singular() and !is_page()) {
+            $cat_link = get_category_link( $post_id );
+            ?>
+            <a class="kbe_feed_button" title="Link zum RSS Feed" href="<?php echo $cat_link ?>feed/?post_type=kbe_knowledgebase"><i class="mdf mdf-lg mdf-rss"></i></a>
+            <?php
+        }        
         echo $after_widget;
     }
     
