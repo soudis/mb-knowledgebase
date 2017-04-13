@@ -75,9 +75,9 @@
 
             <!--<articles>-->
             <div class="kbe_articles">
-                <h2><strong><?php echo $kbe_cat_name; ?></strong></h2>
-                <span class="kbe_category_collapse_all" style="float:right;"></span> 
-                <span class="kbe_category_expand_all" style="float:right;"></span> 
+                <h2>                <span class="kbe_category_collapse_all" style="float:right;"></span> 
+                <span class="kbe_category_expand_all" style="float:right;"></span> <strong><?php echo $kbe_cat_name; ?></strong></h2>
+
                 <ul>
             <?php
                 if($kbe_tax_post_qry->have_posts()) :
