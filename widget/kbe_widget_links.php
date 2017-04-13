@@ -54,9 +54,9 @@ class kbe_links_widgets extends WP_Widget {
         if (!is_singular() and !is_page()) {
             $cat_link = get_term_feed_link( $queried_object->term_id, "kbe_taxonomy" );
             if (strpos($cat_link, '?') === false) {
-                $cat_link = $cat_link . '?post_type=kbe_knowledgebase'
+                $cat_link = $cat_link . '?post_type=kbe_knowledgebase';
             } else {
-                $cat_link = $cat_link . '&post_type=kbe_knowledgebase'
+                $cat_link = $cat_link . '&post_type=kbe_knowledgebase';
             }
             ?>
             <a class="kbe_feed_button" title="Link zum RSS Feed" href="<?php echo $post_id; echo $cat_link; ?>"><i class="mdf mdf-lg mdf-rss"></i></a>
