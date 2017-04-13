@@ -111,8 +111,8 @@
                             $kbe_child_term_name = $kbe_child_term->name; 
             ?>
                <h<?php echo $level+3; ?>> <!-- <?php echo $kbe_child_term_slug ?> -->  
-                                <span class="kbe_category_collapse"></span>   
-                                <span class="kbe_category_collapse_all"></span>                                       
+                                <span><span class="kbe_category_collapse"></span>   
+                                <span class="kbe_category_collapse_all"></span></span>                                   
                                 <a href="<?php echo get_term_link($kbe_child_term_slug, 'kbe_taxonomy') ?>">
                                     <?php echo $kbe_child_term_name; ?>
                                 </a>  
