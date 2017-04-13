@@ -26,7 +26,9 @@ class kbe_links_widgets extends WP_Widget {
   //=======> How to display the widget on the screen.
     function widget($args, $widgetData) {
         extract($args);
-
+        ?>
+        <div class="kbe_widget">
+        <?php
         if (is_user_logged_in()) {
             $queried_object = get_queried_object();
 
@@ -34,7 +36,7 @@ class kbe_links_widgets extends WP_Widget {
                 $post_id = $queried_object->ID;
             }
         ?>
-        <div class="kbe_widget">
+        
             <?php
             if (current_user_can( "publish_posts" ) ) {
             ?>
@@ -47,9 +49,6 @@ class kbe_links_widgets extends WP_Widget {
             <?php
             }
 
-            ?>
-        </div>
-        <?php
         }
         if (!is_singular() and !is_page()) {
             $cat_link = get_category_link( $post_id );
@@ -57,6 +56,9 @@ class kbe_links_widgets extends WP_Widget {
             <a class="kbe_feed_button" title="Link zum RSS Feed" href="<?php echo $cat_link ?>feed/?post_type=kbe_knowledgebase"><i class="mdf mdf-lg mdf-rss"></i></a>
             <?php
         }        
+            ?>
+        </div>
+        <?php
         echo $after_widget;
     }
     
