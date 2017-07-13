@@ -718,6 +718,16 @@ function search_term_id($query) {
 
 add_action('pre_get_posts', 'search_term_id');
 
+function after_taxupdate($term_id, $taxonomy) {
+
+    delete_option(KBE_POST_TAXONOMY . '_children');
+    wp_chache_flush();
+
+}
+
+add_action('edit_'.KBE_POST_TAXONOMY, 'after_taxupdate');
+add_action('create_'.KBE_POST_TAXONOMY, 'after_taxupdate');
+
 //=========> KBE Article Tags
 function kbe_show_tags(){
     $kbe_tags_term = get_the_terms( $post->ID , KBE_POST_TAGS );
