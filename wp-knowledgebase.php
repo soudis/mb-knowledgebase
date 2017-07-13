@@ -721,7 +721,7 @@ add_action('pre_get_posts', 'search_term_id');
 function after_taxupdate($term_id, $taxonomy) {
 
     delete_option(KBE_POST_TAXONOMY . '_children');
-    wp_chache_flush();
+    wp_cache_flush();
 
 }
 
