@@ -587,8 +587,9 @@ function kbe_breadcrumbs(){
 <!--            <li><a href="<?php echo home_url(); ?>"><?php _e('Home','kbe'); ?></a></li>
             <li><a href="<?php echo home_url()."/".KBE_PLUGIN_SLUG; ?>"><?php _e($kbe_slug_case ,'kbe'); ?></a></li>-->
         <?php
-            $first = true;
-            foreach($kbe_bc_term as $kbe_tax_term){
+	    if ($kbe_bc_term !== false) {
+              $first = true;
+              foreach($kbe_bc_term as $kbe_tax_term){
                 if ($first) {
                     print_term($kbe_tax_term);
                     $first = false;
@@ -601,6 +602,7 @@ function kbe_breadcrumbs(){
                 </li>
         <?php                    
                 }
+	      }
             ?>
         <?php
             }
