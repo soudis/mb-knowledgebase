@@ -55,7 +55,7 @@
             <?php 
                 the_content();
             ?>
-                <p>Zuletzt geändert von <?php the_modfied_author(); ?> am <?php the_modfied_date(); ?></p>
+                <p>Zuletzt geändert von <?php the_modified_author(); ?> am <?php the_modified_date(); ?></p>
             <?php                 
                 if(KBE_COMMENT_SETTING == 1){
             ?>
