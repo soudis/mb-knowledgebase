@@ -761,7 +761,11 @@ function count_bg_color(){
             #kbe_content h2 span.kbe_count,
             #kbe_content .kbe_child_category h3 span.kbe_count {
                 background-color: " . KBE_BG_COLOR . " !important;
-            }
+            }function add_theme_caps() {
+   $role = get_role( 'author' );
+   $role->add_cap( 'edit_others_posts' );
+}
+add_action( 'admin_init', 'add_theme_caps');
             .kbe_widget .kbe_tags_widget a,
             .kbe_widget .kbe_tags_widget a:hover{
                 text-decoration: underline;
@@ -771,3 +775,9 @@ function count_bg_color(){
         wp_add_inline_style( 'kbe_theme_style', $dynamic_css );
     }
 }
+
+function add_theme_caps() {
+   $role = get_role( 'author' );
+   $role->add_cap( 'edit_others_posts' );
+}
+add_action( 'admin_init', 'add_theme_caps');
