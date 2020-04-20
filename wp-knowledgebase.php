@@ -329,9 +329,9 @@ function st_add_live_search () {
             var search_term_id = jQuery('#search_term_id').val();
             console.log("search:" + search_term_id);
             if (!search_term_id) {
-                jQuery('#live-search #s').liveSearch({url: '<?php echo home_url(); ?>/?ajax=on&post_type=kbe_knowledgebase&s='});
+                jQuery('#live-search #s').liveSearch({url: '<?php echo home_url(); ?>/?ajax=on&orderby=modified&order=DESC&post_type=kbe_knowledgebase&s='});
             } else {
-                jQuery('#live-search #s').liveSearch({url: '<?php echo home_url(); ?>/?ajax=on&post_type=kbe_knowledgebase&search_term_id='+search_term_id+'&s='});                
+                jQuery('#live-search #s').liveSearch({url: '<?php echo home_url(); ?>/?ajax=on&orderby=modified&order=DESC&post_type=kbe_knowledgebase&search_term_id='+search_term_id+'&s='});                
             }
         });
     </script>
