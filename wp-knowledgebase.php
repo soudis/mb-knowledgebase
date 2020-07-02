@@ -255,6 +255,42 @@ define('KBE_POST_TYPE', 'kbe_knowledgebase');
 define('KBE_POST_TAXONOMY', 'kbe_taxonomy');
 define('KBE_POST_TAGS', 'kbe_tags');
 
+
+function kbe_post_type() {
+
+    register_post_type( 'kbe_knowledgebase',
+        // WordPress CPT Options Start
+        array(
+            'labels' => array(
+                'name' => __( 'Knowledgebase' ),
+                'singular_name' => __( 'Knowledgebase' )
+            ),
+            'has_archive' => true,
+            'public' => true,
+            'rewrite' => false,
+            'show_in_rest' => true,
+            'supports' => array('editor')
+        )
+    );
+
+    $args = [
+        'hierarchical'      => true,
+        'labels' => array(
+            'name' => __( 'Kategorie' ),
+            'singular_name' => __( 'Kategorie' )
+        ),
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true, // Needed for tax to appear in Gutenberg editor.
+        'query_var'         => true,
+        'rewrite'           => false,
+    ];
+ 
+    register_taxonomy( 'kbe_taxonomy', [ 'kbe_knowledgebase' ], $args );
+}
+
+add_action( 'init', 'kbe_post_type' );
+
 //=========> Get Knowledgebase title
 global $wpdb;
 $getSql = $wpdb->get_results("Select ID From $wpdb->posts Where post_content Like '%[kbe_knowledgebase]%' And post_type <> 'revision'");
