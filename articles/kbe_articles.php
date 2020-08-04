@@ -14,15 +14,15 @@ function kbe_articles() {
     $labels = array(
         'name'                  => 	__('Knowledgebase', 'kbe'),
         'singular_name'         => 	__('Knowledgebase', 'kbe'),
-        'all_items'             => 	__('Articles', 'kbe'),
-        'add_new'               => 	__('New Article', 'kbe'),
-        'add_new_item'          => 	__('Add New Article', 'kbe'),
-        'edit_item'             => 	__('Edit Article', 'kbe'),
-        'new_item'              => 	__('New Article', 'kbe'),
-        'view_item'             => 	__('View Articles', 'kbe'),
-        'search_items'          => 	__('Search Articles', 'kbe'),
-        'not_found'             => 	__('Nothing found', 'kbe'),
-        'not_found_in_trash'    => 	__('Nothing found in Trash', 'kbe'),
+        'all_items'             => 	__('Artikel', 'kbe'),
+        'add_new'               => 	__('Neuer Artikel', 'kbe'),
+        'add_new_item'          => 	__('Neuen Artikel erstellen', 'kbe'),
+        'edit_item'             => 	__('Artikel Bearbeiten', 'kbe'),
+        'new_item'              => 	__('Neuer Artikel', 'kbe'),
+        'view_item'             => 	__('Artikel Öffnen', 'kbe'),
+        'search_items'          => 	__('Artikel durchsuchen', 'kbe'),
+        'not_found'             => 	__('Keine Artikel gefunden', 'kbe'),
+        'not_found_in_trash'    => 	__('Keine Artikel im Papierkorb gefunden', 'kbe'),
         'parent_item_colon'     => 	''
     );
     
@@ -49,7 +49,8 @@ function kbe_articles() {
         'show_in_admin_bar'     => 	true,
         'can_export'            => 	true,
         'has_archive'           => 	true,
-        'exclude_from_search'   => 	true
+        'exclude_from_search'   => 	true,
+        'show_in_rest' 		=> 	true
     );
  
     register_post_type( 'kbe_knowledgebase' , $args );
@@ -60,25 +61,27 @@ add_action( 'init', 'kbe_taxonomies', 0 );
 function kbe_taxonomies() {
     // Add new taxonomy, make it hierarchical (like categories)
     $labels = array(
-        'name'              => 	__( 'Knowledgebase Category', 'kbe'),
-        'singular_name'     => 	__( 'Knowledgebase Category', 'kbe' ),
-        'search_items'      => 	__( 'Search Knowledgebase Category', 'kbe' ),
-        'all_items'         => 	__( 'All Knowledgebase Categories', 'kbe' ),
-        'parent_item'       => 	__( 'Parent Knowledgebase Category', 'kbe' ),
-        'parent_item_colon' => 	__( 'Parent Knowledgebase Category:', 'kbe' ),
-        'edit_item'         => 	__( 'Edit Knowledgebase Category', 'kbe' ),
-        'update_item'       => 	__( 'Update Knowledgebase Category', 'kbe' ),
-        'add_new_item'      => 	__( 'Add New Knowledgebase Category', 'kbe' ),
-        'new_item_name'     => 	__( 'New Knowledgebase Category Name', 'kbe' ),
-	'menu_name'         => 	__( 'Categories', 'kbe' )
+        'name'              => 	__( 'Knowledgebase Kategorie', 'kbe'),
+        'singular_name'     => 	__( 'Knowledgebase Kategorie', 'kbe' ),
+        'search_items'      => 	__( 'Suche Knowledgebase Kategorie', 'kbe' ),
+        'all_items'         => 	__( 'Alle Knowledgebase Kategorien', 'kbe' ),
+        'parent_item'       => 	__( 'Parent Knowledgebase Kategorie', 'kbe' ),
+        'parent_item_colon' => 	__( 'Parent Knowledgebase Kategorie:', 'kbe' ),
+        'edit_item'         => 	__( 'Knowledgebase Kategorie bearbeiten', 'kbe' ),
+        'update_item'       => 	__( 'Knowledgebase Kategorie updated', 'kbe' ),
+        'add_new_item'      => 	__( 'Neue Knowledgebase Kategorie', 'kbe' ),
+        'new_item_name'     => 	__( 'Knowledgebase Kategorie Name', 'kbe' ),
+	'menu_name'         => 	__( 'Kategorien', 'kbe' )
     ); 	
 	
     register_taxonomy( 'kbe_taxonomy', array( 'kbe_knowledgebase' ), array(
         'hierarchical'      => 	true,
         "labels"            => 	$labels,
-        "singular_label"    => 	__( 'Knowledgebase Category', 'kbe'),
+        "singular_label"    => 	__( 'Knowledgebase Kategorie', 'kbe'),
         'show_ui'           => 	true,
         'query_var'         => 	true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true, // Needed for tax to appear in Gutenberg editor.	    
         'rewrite'           => 	array( 'slug' => 'knowledgebase_category', 'with_front' => true )
     ));
 }
